@@ -7,7 +7,7 @@
 
 .trainer-sidenav{
     height: 100%;
-    width: 250px;
+    width: 265px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -17,15 +17,21 @@
 }
 
 .trainer-sidenav a{
-    padding: 12px 8px 12px 30px;
+    padding: 10px 8px 10px 30px;
     text-decoration: none;
     font-size: 14px;
     color: white;
     display: block;
 }
 
+.logout-btn{
+    position: absolute;
+    bottom: 0;
+}
+
 .profile-picture{
-    width: 150px;
+    width: 115px;
+    height: 115px;
     border-radius: 50% 50%;
     margin: 0 auto;
     display: block;
@@ -43,28 +49,34 @@
     font-size: 14px;
 }
 
-.player-info li:last-child{
-    padding-top: 20px;
-}
-
 .player-info li:nth-child(2){
     padding-bottom: 13px;
+    font-size: 12px;
+}
+
+.player-info li:last-child{
+    padding-top: 20px;
 }
 
 #selected{
     background-color: white;
     color: black;
+    -webkit-box-shadow: 0px 0px 1px 0px rgba(208,208,208,1);
+    -moz-box-shadow: 0px 0px 1px 0px rgba(208,208,208,1);
+    box-shadow: 0px 0px 1px 0px rgba(208,208,208,1);
 }
 
 .trainer-stats{
     background-color: transparent;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .exp-container{
     width: 80%;
-    background-color: #ddd;
+    background-color: white;
     margin: 0 auto;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
 }
 
 .exp-user{
