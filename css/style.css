@@ -1,0 +1,87 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* CSS responsável pelo menu lateral*/
+
+.trainer-sidenav{
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f06868;
+    overflow-x: hidden;
+}
+
+.trainer-sidenav a{
+    padding: 12px 8px 12px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    display: block;
+}
+
+.profile-picture{
+    width: 150px;
+    border-radius: 50% 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.player-info{
+    list-style: none;
+    text-align: center;
+    padding: 0px;
+}
+
+.player-info li{
+    padding: 3px;
+    color: white;
+    font-size: 14px;
+}
+
+.player-info li:last-child{
+    padding-top: 20px;
+}
+
+.player-info li:nth-child(2){
+    padding-bottom: 13px;
+}
+
+#selected{
+    background-color: white;
+    color: black;
+}
+
+.trainer-stats{
+    background-color: transparent;
+    margin-bottom: 50px;
+}
+
+.exp-container{
+    width: 80%;
+    background-color: #ddd;
+    margin: 0 auto;
+}
+
+.exp-user{
+    text-align: center;
+    color: white;
+    line-height: 15px;
+    font-size: 10px;
+}
+
+.xp{
+   width: 70%;
+   background-color: #64BFDE;
+}
+
+.tittle-app{
+    text-align: center;
+    color: white;
+}
+
+/* CSS responsável pelo menu lateral */
