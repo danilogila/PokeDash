@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,23 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>PokeDash</title>
 </head>
-<body>
+
+<body onload="aumentoXp()">
     <div class="trainer-sidenav">
 
-        <div class="trainer-stats">  
-            <p class="tittle-app">Poke</p> 
+        <div class="trainer-stats">
+            <p class="tittle-app">Poke</p>
             <img class="profile-picture" src="img/trainer.png" alt="Foto de Perfil">
             <ol class="player-info">
-                <li>Danilo Gila</li>
-                <li>Mt. Moon, Mount Akagi</li>
-                <li>Lvl: 30</li>
+                <li class="user-name">Danilo Gila</li>
+                <li class="user-location">Mt. Moon, Mount Akagi</li>
+                <li class="user-lvl">Lvl: 30</li>
                 <div class="exp-container">
-                    <div class="exp-user xp">Exp: 680 de 920</div>
+                    <div class="exp-bar xp-user">
+                        <span class="xp-value">
+                            <span class="current-xp">680</span> de 920</span>
+                        <span style="color: transparent;">.</span>
+                    </div>
                 </div>
             </ol>
         </div>
@@ -34,7 +40,109 @@
     </div>
 
     <div id="main-content">
+        <section class="search-wrapper">
+        </section>
 
+        <section class="pokemon-wrapper">
+            <section class="info-container">
+                <div class="pokemon-info pokemon-stats">
+                    <img src="img/pkm01.png" alt="Foto do Pokemon" class="pokemon-picture">
+                    <ol class="player-info">
+                        <li class="pokemon-name">Pikachu</li>
+                        <li class="pkmxp-bar">
+                            <div class="exp-container pkmxp-wrapper">
+                                <div class="exp-bar xp-pokemon">
+                                    <span class="xp-value">
+                                        <span class="current-xp">680</span> de 920</span>
+                                    <span style="color: transparent;">.</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="pokemon-lvl"> Lvl:
+                            <span class="pkmlvl-value">30</span>
+                        </li>
+
+                    </ol>
+
+                    <div class="attribute-wrapper">
+                        <div class="pokemon-attributes">
+                            <p class="attribute-content height-pkm">Height:
+                                <span>1'04"</span>
+                            </p>
+                            <p class="attribute-content category-pkm">Categoria:
+                                <span>Mouse</span>
+                            </p>
+                        </div>
+                        <div class="pokemon-attributes">
+                            <p class="attribute-content wheight-pkm">Weight:
+                                <span>13.2 lbs</span>
+                            </p>
+                            <p class="attribute-content abilities-pkm">Abilities:
+                                <span>Static</span>
+                            </p>
+                        </div>
+                        <img src="img/bolt.png" alt="Icone do tipo do pokemon" class="nature-icon">
+                    </div>
+                </div>
+                <div class="pokemon-info pokemon-about">
+                    <h5>About
+                        <span>Pikachu</span>
+                    </h5>
+                    <p class="pokemon-text">Whenever Pikachu comes across something new, it blasts it with a jolt of electricity. If you come across
+                        a blackened berry, it's evidence that this Pokémon mistook the intensity of its charge.
+                    </p>
+                    <p class="evolve-info">Pikachu can evolve after lvl 5 into Raichu</p>
+                    <button class="btn-actions evolve-btn">Evolve</button>
+
+                    <section class="current-stats">
+                        <div class="stats-wrapper">
+                            <div class="stats-bar attack-bar"></div>
+                            <p class="stats-name">Attack</p>
+                        </div>
+
+                        <div class="stats-wrapper">
+                            <div class="stats-bar health-bar"></div>
+                            <p class="stats-name">Health</p>
+                        </div>
+
+                        <div class="stats-wrapper">
+                            <div class="stats-bar defense-bar"></div>
+                            <p class="stats-name">Defense</p>
+                        </div>
+
+                        <div class="stats-wrapper">
+                            <div class="stats-bar speed-bar"></div>
+                            <p class="stats-name">Speed</p>
+                        </div>
+
+                        <div class="stats-wrapper">
+                            <div class="stats-bar ability-bar"></div>
+                            <p class="stats-name">Ability</p>
+                        </div>
+
+                        <p class="stats-caption">stats</p>
+
+                    </section>
+                </div>
+            </section>
+
+            <section class="info-container battles-wrapper">
+                <div class="battle-info scoreboard">
+                    <p class="scoreboard-title">scoreboard</p>
+                    <div class="battle-log-wrapper">
+                        <button class="btn-actions wins-btn">Win: 86</button>
+                        <button class="btn-actions losses-btn">Lost: 34</button>
+                    </div>
+                    <div class="battle-btn-wrapper">
+                        <button class="btn-actions battle-btn">Battle</button>
+                    </div>
+                </div>
+                <div class="battle-info user-performance"></div>
+            </section>
+        </section>
     </div>
+
+    <script src="js/app.js"></script>
 </body>
+
 </html>
