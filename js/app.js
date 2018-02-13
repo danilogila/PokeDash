@@ -10,3 +10,22 @@ console.log(currentXp);
         }, 2*x);
     }
 }
+
+document.querySelector(".btn-search").addEventListener("click",function(e){
+    e.preventDefault();
+});
+
+function controlarInput(){
+
+    let inputSearch = document.querySelector(".search-input");
+
+    //SOmente para verificar se o input foi pego
+    console.log(inputSearch);
+
+    if(!inputSearch.classList.contains("search-visible")){
+        inputSearch.classList.add("search-visible");
+    }else{
+        inputSearch.classList.remove("search-visible");
+    }
+
+}

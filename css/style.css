@@ -152,6 +152,41 @@ body, html{
     width: 100%;
     border-bottom: 1px solid #C9C9CA;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.search-input{
+    padding: 6px;
+    font-size: 17px;
+    border: none;
+    height: 36px;
+    display: none;
+}
+
+.search-visible{
+    display: initial;
+    width: 80%;
+    border: 1px solid #c9c9c9;
+}
+
+.btn-search{
+    float: right;
+    padding: 8px 10px;
+    /* margin-top: 8px; */
+    /* margin-right: 16px; */
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.form-search{
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
 }
 
 /* CSS responsável pela barra de busca dos Pokemons na API */
@@ -282,11 +317,21 @@ body, html{
     border-radius: 20px;
     font-size: 15px;
     margin: 5px;
+    -webkit-transition: background-color 0.5s ease-out;
+    -moz-transition: background-color 0.5s ease-out;
+    -o-transition: background-color 0.5s ease-out;
+    transition: background-color 0.5s ease-out;
 }
 
 .evolve-btn{
     background-color: #F06868;
     color: white;
+}
+
+.evolve-btn:hover, .battle-btn:hover{
+    background-color: white;
+    color: #F06868;
+    border: 1px solid #F06868;
 }
 
 .battle-log-wrapper{
@@ -300,10 +345,22 @@ body, html{
     color: white;
 }
 
+.wins-btn:hover{
+    color: #939393;
+    background-color: white;
+    border: 1px solid #F7CF53;
+}
+
 .losses-btn{
     background-color: transparent;
     border: 1px solid #F7CF53;
     color: #939393;
+}
+
+.losses-btn:hover{
+    background-color: #939393;
+    color: white;
+    border: none;
 }
 
 .battle-btn{

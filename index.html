@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>PokeDash</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        
 </head>
 
 <body onload="aumentoXp()">
@@ -41,6 +43,10 @@
 
     <div id="main-content">
         <section class="search-wrapper">
+                <form class="form-search">
+                    <input class="search-input" type="text" placeholder="Digite o nome do Pokemon..." name="search">
+                    <button type="submit" class="btn-search"><i class="fa fa-search" onclick="controlarInput()"></i></button>
+                  </form>
         </section>
 
         <section class="pokemon-wrapper">
