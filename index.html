@@ -44,23 +44,22 @@
     <div id="main-content">
         <section class="search-wrapper">
                 <form class="form-search">
-                    <input class="search-input" type="text" placeholder="Digite o nome do Pokemon..." name="search">
-                    <button type="submit" class="btn-search"><i class="fa fa-search" onclick="controlarInput()"></i></button>
+                    <input class="search-input" type="text" placeholder="Digite o nome do Pokemon..." name="search" required>
+                    <button type="submit" class="btn-search">Enviar</button>
                   </form>
         </section>
 
         <section class="pokemon-wrapper">
             <section class="info-container">
                 <div class="pokemon-info pokemon-stats">
-                    <img src="img/pkm01.png" alt="Foto do Pokemon" class="pokemon-picture">
+                    <img src="img/pokeball.png" alt="Foto do Pokemon" class="pokemon-picture">
                     <ol class="player-info">
-                        <li class="pokemon-name">Pikachu</li>
+                        <li class="pokemon-name">Teste</li>
                         <li class="pkmxp-bar">
                             <div class="exp-container pkmxp-wrapper">
                                 <div class="exp-bar xp-pokemon">
-                                    <span class="xp-value">
-                                        <span class="current-xp">680</span> de 920</span>
-                                    <span style="color: transparent;">.</span>
+                                    <span class="xp-value"><span class="current-xp">680</span> XP Base</span>
+                                    <span style="color: transparent;">.</span>  
                                 </div>
                             </div>
                         </li>
@@ -73,31 +72,35 @@
                     <div class="attribute-wrapper">
                         <div class="pokemon-attributes">
                             <p class="attribute-content height-pkm">Height:
-                                <span>1'04"</span>
+                                <span class="height-value"></span>
                             </p>
                             <p class="attribute-content category-pkm">Categoria:
-                                <span>Mouse</span>
+                                <span class="category-value"></span>
                             </p>
+
                         </div>
                         <div class="pokemon-attributes">
                             <p class="attribute-content wheight-pkm">Weight:
-                                <span>13.2 lbs</span>
+                                <span class="weight-value"></span>
                             </p>
-                            <p class="attribute-content abilities-pkm">Abilities:
-                                <span>Static</span>
-                            </p>
+                            <section class="attribute-content abilities-pkm">Abilities:
+                                <!-- <span>Static</span> -->
+                                <select name="habilidades" id="pkmHabilidades">
+                                    <option value="static"></option>
+                                </select>
+                            </section>
                         </div>
                         <img src="img/bolt.png" alt="Icone do tipo do pokemon" class="nature-icon">
                     </div>
                 </div>
                 <div class="pokemon-info pokemon-about">
                     <h5 class="about-title">About
-                        <span>Pikachu</span>
+                        <span class="pokemon-name"></span>
                     </h5>
-                    <p class="pokemon-text">Whenever Pikachu comes across something new, it blasts it with a jolt of electricity. If you come across
+                    <p class="pokemon-text">Whenever <span class="pokemon-name"></span> comes across something new, it blasts it with a jolt of electricity. If you come across
                         a blackened berry, it's evidence that this Pokémon mistook the intensity of its charge.
                     </p>
-                    <p class="evolve-info">Pikachu can evolve after lvl 5 into Raichu</p>
+                    <p class="evolve-info"><span class="pokemon-name"></span> can evolve after lvl 5 into Raichu</p>
                     <button class="btn-actions evolve-btn">Evolve</button>
 
                     <section class="current-stats">
@@ -148,7 +151,13 @@
         </section>
     </div>
 
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="js/buscarpokemonapi.js"></script>
     <script src="js/app.js"></script>
+    
 </body>
 
 </html>

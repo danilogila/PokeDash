@@ -103,7 +103,7 @@ body, html{
 }
 
 .xp-pokemon{
-    width: 70%;
+    width: 100%;
     background-color: #F7CF53;
     -webkit-animation: xpgrow 1s infinite; /* Safari */
     animation: xpgrow 2s;
@@ -157,17 +157,17 @@ body, html{
 }
 
 .search-input{
-    padding: 6px;
+    padding: 10px;
     font-size: 17px;
-    border: none;
+    width: 80%;
+    border: 1px solid #c9c9c9;
     height: 36px;
-    display: none;
+    background: #ffffff url("../img/search.png") no-repeat right center;
 }
 
 .search-visible{
     display: initial;
-    width: 80%;
-    border: 1px solid #c9c9c9;
+    
 }
 
 .btn-search{
@@ -230,11 +230,13 @@ body, html{
 .pokemon-picture{
     margin: 0 auto;
     display: block;
+    height: 130px;
 }
 
 .pokemon-name{
     color: #3C3C3C;
     font-weight: 700;
+    text-transform: capitalize;
 }
 
 .pokemon-lvl{
@@ -243,7 +245,7 @@ body, html{
 }
 
 .about-title{
-    color: #646464;
+    color: #939393;
 }
 
 .attribute-wrapper{
@@ -273,6 +275,12 @@ body, html{
     font-size: 12px;
 }
 
+#pkmHabilidades{
+    min-width: 60px;
+    border: none;
+    background-color: transparent;
+}
+
 .height-pkm{
     width: 55px;
     float: left;
@@ -288,6 +296,17 @@ body, html{
     float: left;
 }
 
+.category-value{
+    text-transform: capitalize;
+}
+
+.weight-value, .height-value{
+    display: block;
+}
+.weight-value::after{
+    content: " lbs";
+}
+
 .abilities-pkm{
     width: 60px;
     float: right;
@@ -300,6 +319,7 @@ body, html{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    margin-left: -5px;
 }
 
 .scoreboard-title{
@@ -313,7 +333,6 @@ body, html{
     width: 110px;
     height: 32px;
     border: none;
-    cursor: pointer;
     border-radius: 20px;
     font-size: 15px;
     margin: 5px;
