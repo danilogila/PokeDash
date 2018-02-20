@@ -9,7 +9,30 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>PokeDash</title>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-        
+
+    <!-- ****** favicons do PokeDash ****** -->
+    <link rel="shortcut icon" href="img/icons/favicon.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="img/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="img/icons/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="img/icons/favicon-160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/icons/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="img/icons/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16.png">
+    <link rel="apple-touch-icon" href="img/icons/favicon-57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/icons/favicon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/icons/favicon-72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/icons/favicon-144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/icons/favicon-60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/icons/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/icons/favicon-76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/favicon-180.png">
+    <meta name="msapplication-TileColor" content="black">
+    <meta name="msapplication-TileImage" content="img/icons/favicon-144.png">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <!-- ****** favicons do PokeDash ****** -->
+
 </head>
 
 <body onload="aumentoXp()">
@@ -33,7 +56,7 @@
         </div>
 
         <a href="#">Battle</a>
-        <a id="selected" href="#">My Pokemon</a>
+        <a id="selected" href="#">Pokedex</a>
         <a href="#">Profile</a>
         <a href="#">Poke Market</a>
         <a href="#">World Map</a>
@@ -43,35 +66,40 @@
 
     <div id="main-content">
         <section class="search-wrapper">
-                <form class="form-search">
-                    <input class="search-input" type="text" placeholder="Digite o nome do Pokemon..." name="search" required>
-                    <button type="submit" class="btn-search">Enviar</button>
-                  </form>
+            <form class="form-search">
+                <input class="search-input" type="text" placeholder="Digite o nome do Pokemon..." name="search" required>
+                <button type="submit" class="btn-search">Enviar</button>
+            </form>
         </section>
 
         <section class="pokemon-wrapper">
             <section class="info-container">
                 <div class="pokemon-info pokemon-stats">
-                    <img src="img/pokeball.png" alt="Foto do Pokemon" class="pokemon-picture">
+                    <img src="img/unknown.png" alt="Foto do Pokemon" class="pokemon-picture">
                     <ol class="player-info">
-                        <li class="pokemon-name">Teste</li>
+                        <li class="pokemon-name"></li>
                         <li class="pkmxp-bar">
                             <div class="exp-container pkmxp-wrapper">
                                 <div class="exp-bar xp-pokemon">
-                                    <span class="xp-value"><span class="current-xp">680</span> XP Base</span>
-                                    <span style="color: transparent;">.</span>  
+                                    <span class="xp-value">
+                                        <span class="pokemon-xp">
+
+                                        </span>
+                                        XP Base
+                                    </span>
+                                    <span style="color: transparent;">.</span>
                                 </div>
                             </div>
                         </li>
                         <li class="pokemon-lvl"> Lvl:
-                            <span class="pkmlvl-value">30</span>
+                            <span class="pkmlvl-value">??</span>
                         </li>
 
                     </ol>
 
                     <div class="attribute-wrapper">
                         <div class="pokemon-attributes">
-                            <p class="attribute-content height-pkm">Height:
+                            <p class="attribute-content height-pkm">Altura:
                                 <span class="height-value"></span>
                             </p>
                             <p class="attribute-content category-pkm">Categoria:
@@ -80,38 +108,46 @@
 
                         </div>
                         <div class="pokemon-attributes">
-                            <p class="attribute-content wheight-pkm">Weight:
+                            <p class="attribute-content wheight-pkm">Peso:
                                 <span class="weight-value"></span>
                             </p>
-                            <section class="attribute-content abilities-pkm">Abilities:
+                            <section class="attribute-content abilities-pkm">Skills:
                                 <!-- <span>Static</span> -->
                                 <select name="habilidades" id="pkmHabilidades">
                                     <option value="static"></option>
                                 </select>
                             </section>
                         </div>
-                        <img src="img/bolt.png" alt="Icone do tipo do pokemon" class="nature-icon">
+                        <img src="img/question-mark.png" alt="Icone do tipo do pokemon" class="nature-icon">
                     </div>
                 </div>
                 <div class="pokemon-info pokemon-about">
                     <h5 class="about-title">About
                         <span class="pokemon-name"></span>
                     </h5>
-                    <p class="pokemon-text">Whenever <span class="pokemon-name"></span> comes across something new, it blasts it with a jolt of electricity. If you come across
-                        a blackened berry, it's evidence that this Pokémon mistook the intensity of its charge.
+                    <p class="pokemon-text">Whenever
+                        <span class="pokemon-name"></span> comes across something new, it blasts it with a jolt of electricity. If you come across a
+                        blackened berry, it's evidence that this Pokémon mistook the intensity of its charge.
                     </p>
-                    <p class="evolve-info"><span class="pokemon-name"></span> can evolve after lvl 5 into Raichu</p>
+                    <p class="evolve-info">
+                        <span class="pokemon-name"></span> can evolve after lvl 5 into Raichu</p>
                     <button class="btn-actions evolve-btn">Evolve</button>
 
                     <section class="current-stats">
+
                         <div class="stats-wrapper">
-                            <div class="stats-bar attack-bar"></div>
-                            <p class="stats-name">Attack</p>
+                            <div class="stats-bar speed-bar"></div>
+                            <p class="stats-name">Velocidade</p>
                         </div>
 
                         <div class="stats-wrapper">
-                            <div class="stats-bar health-bar"></div>
-                            <p class="stats-name">Health</p>
+                            <div class="stats-bar special-defense-bar"></div>
+                            <p class="stats-name">Defesa S.</p>
+                        </div>
+
+                        <div class="stats-wrapper">
+                            <div class="stats-bar special-attack-bar"></div>
+                            <p class="stats-name">Ataque S.</p>
                         </div>
 
                         <div class="stats-wrapper">
@@ -120,13 +156,13 @@
                         </div>
 
                         <div class="stats-wrapper">
-                            <div class="stats-bar speed-bar"></div>
-                            <p class="stats-name">Speed</p>
+                            <div class="stats-bar attack-bar"></div>
+                            <p class="stats-name">Attack</p>
                         </div>
 
                         <div class="stats-wrapper">
-                            <div class="stats-bar ability-bar"></div>
-                            <p class="stats-name">Ability</p>
+                            <div class="stats-bar health-bar"></div>
+                            <p class="stats-name">Health</p>
                         </div>
 
                         <p class="stats-caption">stats</p>
@@ -149,15 +185,24 @@
                 <div class="battle-info user-performance"></div>
             </section>
         </section>
+
+        <button id="myBtn">Abrir Modal</button>
+
+        <div id="myModal" class="modal">
+
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>You've met with a terrible Error, haven't you?</p>
+                <p>Pokemon não encontrado</p>
+            </div>
+
+        </div>
+
     </div>
 
-    <script
-    src="http://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
     <script src="js/buscarpokemonapi.js"></script>
     <script src="js/app.js"></script>
-    
+    <script src="js/modal.js"></script>
 </body>
 
 </html>

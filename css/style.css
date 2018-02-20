@@ -122,7 +122,7 @@ body, html{
 
 }
 
-.current-xp{
+.current-xp, .pokemon-xp{
     width: 10px;
 }
 
@@ -230,13 +230,15 @@ body, html{
 .pokemon-picture{
     margin: 0 auto;
     display: block;
-    height: 130px;
+    height: 100px;
+    margin-top: 30px;
 }
 
 .pokemon-name{
     color: #3C3C3C;
     font-weight: 700;
     text-transform: capitalize;
+    height: 19px;
 }
 
 .pokemon-lvl{
@@ -276,7 +278,7 @@ body, html{
 }
 
 #pkmHabilidades{
-    min-width: 60px;
+    max-width: 100px;
     border: none;
     background-color: transparent;
 }
@@ -303,9 +305,6 @@ body, html{
 .weight-value, .height-value{
     display: block;
 }
-.weight-value::after{
-    content: " lbs";
-}
 
 .abilities-pkm{
     width: 60px;
@@ -313,8 +312,8 @@ body, html{
 }
 
 .nature-icon{
-    height: 75px;
-    width: 35px;
+    height: 50px;
+    width: 50px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -430,11 +429,6 @@ body, html{
     z-index: 0;
 }
 
-.ability-bar{
-    -webkit-animation: abilitygrow 1s infinite; /* Safari */
-    animation: abilitygrow 2s;
-    height: 55px;
-}
 .health-bar{
     -webkit-animation: healthgrow 1s infinite; /* Safari */
     animation: healthgrow 2s;
@@ -451,6 +445,18 @@ body, html{
     height: 35px;
 }
 .speed-bar{
+    -webkit-animation: speedgrow 1s infinite; /* Safari */
+    animation: speedgrow 2s;
+    height: 80px;
+}
+
+.special-defense-bar{
+    -webkit-animation: speedgrow 1s infinite; /* Safari */
+    animation: speedgrow 2s;
+    height: 80px;
+}
+
+.special-attack-bar{
     -webkit-animation: speedgrow 1s infinite; /* Safari */
     animation: speedgrow 2s;
     height: 80px;
@@ -506,3 +512,55 @@ body, html{
 }
 
 */
+
+/* CSS responsável pela janela modal de error quando não encontramos um Pokemon */
+
+/*=========== Modal ============*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Conteudo do Modal*/
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* Botão fechar */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-active{
+    display: block;
+}
+
+#myBtn{
+    display: none;
+}
+
+/* CSS responsável pela janela modal de error quando não encontramos um Pokemon */

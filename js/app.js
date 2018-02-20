@@ -22,3 +22,4 @@ document.querySelector(".btn-search").addEventListener("click", function(e){
 
     buscarPokemon(pkmId);
 });
+
