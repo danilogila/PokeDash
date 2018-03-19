@@ -1,0 +1,131 @@
+.game{
+    height: 81%;
+    background-image: url('../img/background-battle/battle-scene.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.menu{
+    height: 120px;
+    background-color: #424242;
+}
+
+.opponent{
+    height: 350px;
+    border: 1px solid red;
+    position: relative;
+}
+
+.player{
+    height: 180px;
+    position: relative;
+}
+
+.opponent .pokemon{
+    position: absolute;
+    bottom: 15px;
+    right: 245px;
+
+}
+
+.player .pokemon{
+    position: absolute;
+    bottom: 5px;
+    left: 180px;
+    width: 150px;
+}
+
+.stats{
+    background: transparent;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: white;
+    padding: 12px;
+}
+
+.stats .hp-count{
+    background-color: #0AFE20;
+    width: 150px;
+    border: 2px solid black;
+}
+
+.stats .hp-count::before{
+    content: 'HP: ';
+}
+
+.stats .pokemon-level::before{
+    content: 'LVL: ';
+}
+
+.stats .pokeballs{
+    display: inline-block;
+    width: 100%;/* Evita que os itens abaixo invadam a "linha" das Pokebolas */
+
+}
+
+.stats .pokeballs .pokeball{
+    float: left;
+    background-image: url('../img/icons/pokeball.png');
+    background-size: 100% 100%;
+    width: 50px;
+    height: 35px;
+}
+
+.opponent .stats{
+    position: absolute;
+    top: 97px;
+    left: 40px;
+    width: 360px;
+}
+
+.player .stats{
+    position: absolute;
+    top: 43px;
+    right: 100px;
+    width: 360px;
+}
+
+.menu .message{
+    float: left;
+    font-size: 24px;
+    width: 50%;
+    color: white;
+}
+
+.menu .actions{
+    float: right;
+    width: 50%;
+}
+
+.btn-actions{
+    position: relative;
+    float: left;
+    background: #666;
+    border: 3px solid #888;
+    border-radius: 4px;
+    color: #fff;
+    font-family: monospace;
+    font-size: 20px;
+    line-height: 14px;
+    margin: 4px;
+    padding: 16px;
+    width: calc(50% - 8px);
+    height: calc(50% - 8px);
+
+}
+
+.btn-actions,
+.btn-actions:hover,
+.btn-actions:active{
+    outline: none;
+}
+
+.btn-actions:hover{
+    background-color: #777;
+    border-color: #999;
+}
+
+.btn-actions:active{
+    background-color: #777;
+    border-color: black;
+}

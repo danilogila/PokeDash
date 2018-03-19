@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
     <title>PokeDash</title>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
@@ -36,7 +37,7 @@
 </head>
 
 <body onload="aumentoXp()">
-    <div class="trainer-sidenav">
+    <aside class="trainer-sidenav">
 
         <div class="trainer-stats">
             <p class="tittle-app">Poke</p>
@@ -62,13 +63,13 @@
         <a href="#">World Map</a>
         <a class="logout-btn" href="#">Logout</a>
 
-    </div>
+    </aside>
 
     <div id="main-content">
         <section class="search-wrapper">
             <form class="form-search">
                 <input class="search-input" type="text" placeholder="Digite o nome do Pokemon..." name="search" required>
-                <button type="submit" class="btn-search">Enviar</button>
+                <button type="submit" class="btn-search">Buscar</button>
             </form>
         </section>
 
@@ -123,45 +124,44 @@
                 </div>
                 <div class="pokemon-info pokemon-about">
                     <h5 class="about-title">About
-                        <span class="pokemon-name"></span>
+                        <span class="pokemon-name">Pokemon</span>
                     </h5>
-                    <p class="pokemon-text">Whenever
-                        <span class="pokemon-name"></span> comes across something new, it blasts it with a jolt of electricity. If you come across a
-                        blackened berry, it's evidence that this Pokémon mistook the intensity of its charge.
+                    <p class="pokemon-text">
                     </p>
                     <p class="evolve-info">
-                        <span class="pokemon-name"></span> can evolve after lvl 5 into Raichu</p>
-                    <button class="btn-actions evolve-btn">Evolve</button>
+                        Feel free to choose <span class="pokemon-name">One Pokemon</span> for battle.</p>
+                    <button class="btn-actions evolve-btn">Choose</button>
 
                     <section class="current-stats">
 
                         <div class="stats-wrapper">
-                            <div class="stats-bar speed-bar"></div>
+                            <progress value="40" max="180" class="stats-bar speed-bar" title="teste"></progress>
                             <p class="stats-name">Velocidade</p>
                         </div>
 
                         <div class="stats-wrapper">
-                            <div class="stats-bar special-defense-bar"></div>
+                            <progress value="40" max="230" class="stats-bar special-defense-bar" title="teste"></progress>
                             <p class="stats-name">Defesa S.</p>
                         </div>
 
                         <div class="stats-wrapper">
-                            <div class="stats-bar special-attack-bar"></div>
+                            <progress value="40" max="194"class="stats-bar special-attack-bar" title="teste"></progress>
                             <p class="stats-name">Ataque S.</p>
                         </div>
 
                         <div class="stats-wrapper">
-                            <div class="stats-bar defense-bar"></div>
+                            <progress value="40" max="230" class="stats-bar defense-bar" title="teste"></progress>
+                            <div style="clear:both"></div>
                             <p class="stats-name">Defense</p>
                         </div>
 
                         <div class="stats-wrapper">
-                            <div class="stats-bar attack-bar"></div>
+                            <progress value="42" max="190" class="stats-bar attack-bar" title="teste"></progress>
                             <p class="stats-name">Attack</p>
                         </div>
 
                         <div class="stats-wrapper">
-                            <div class="stats-bar health-bar"></div>
+                            <progress value="40" max="255" class="stats-bar health-bar" title="teste"></progress>
                             <p class="stats-name">Health</p>
                         </div>
 
@@ -182,7 +182,9 @@
                         <button class="btn-actions battle-btn">Battle</button>
                     </div>
                 </div>
-                <div class="battle-info user-performance"></div>
+                <div class="battle-info user-performance">
+                    <canvas id="battleChart"></canvas>
+                </div>
             </section>
         </section>
 
@@ -203,6 +205,8 @@
     <script src="js/buscarpokemonapi.js"></script>
     <script src="js/app.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/chart.js"></script>
+
 </body>
 
 </html>

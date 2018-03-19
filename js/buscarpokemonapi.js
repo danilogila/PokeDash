@@ -1,46 +1,63 @@
+async function fetchURLs(id) {
+
+    const endpoint = "https://pokeapi.co/api/v2/pokemon/";
+    const URL = endpoint + id;
+    const URLDesc = `https://pokeapi.co/api/v2/pokemon-species/${id}/`
+    const modalWrapper = document.querySelector(".modal");
+
+    const myHeaders = new Headers();
+    
+    const myInit = { method: 'GET',
+                   headers: myHeaders,
+                   mode: 'cors',
+                   cache: 'default' 
+                };
+
+    try {
+      let data = await Promise.all([
+
+        fetch(URL, myInit).then((response) => response.json()),
+        fetch(URLDesc, myInit).then((response) => response.json())
+      ]);
+
+      getData(data[0]);
+      console.log();
+      alterarDescricao(data[1].flavor_text_entries[4].flavor_text);
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
 
 function buscarPokemon(id) {
 
 
-    const endpoint = "https://cors.now.sh/https://pokeapi.co/api/v2/pokemon/";
+    const endpoint = "https://pokeapi.co/api/v2/pokemon/";
     const URL = endpoint + id;
+    const URLDesc = `https://pokeapi.co/api/v2/pokemon-species/${id}/`
     const modalWrapper = document.querySelector(".modal");
 
-    // fetch(URL)
-    //     .then((resp) => resp.json())
-    //     .then(function (data) {
+    fetch(URL)
+        .then((resp) => resp.json())
+        .then((data) =>{
 
-    //         console.log(data);
-    //         getData(data);
-    //     })
-    //     .catch(function (error) {
-
-    //         console.log(error);
-    //         console.log("you've met with a terrible Error, haven't you?");
-    //         modalWrapper.classList.add("modal-active");
-            
-    //     });
-
-    const request = new XMLHttpRequest();
-
-    request.open('GET', URL, true);
-    request.onload = function(){
-        
-        let data = JSON.parse(this.response);
-
-        if(request.status >= 200 && request.status < 400){   
-            
+            console.log(data);
             getData(data);
+        }),
+        fetch(URLDesc)
+        .then((resp) => resp.json())
+        .then((data) =>{
+            console.log(data);
+            alterarDescricao(data);
+        })    
+        .catch(function (error) {
 
-        }else{
-            
-            console.log("you've met with a terrible Error, haven't you?");
+            console.log(error);
+            console.log("You've met with a terrible Error, haven't you? Pokemon not found");
             modalWrapper.classList.add("modal-active");
-        }
-    }
-
-    request.send();
+            
+        });
     
 }
 
@@ -108,17 +125,16 @@ function alterarAtributos(height, weight, xp) {
     return pkmHeight, pkmWeight, pkmXp;
 }
 
-function alterarBarraDeStats(stats){
-    console.log(stats);
+function alterarBarraDeStats(valoresBarra){
+
+    let cont = 0;
 
     let statsDiv = document.querySelectorAll(".stats-bar");
-    console.log(statsDiv);
+   
+    statsDiv.forEach(stats => {
+        stats.value = valoresBarra[cont++].base_stat;
+    });
 
-    const TAM = statsDiv.length;
-    console.log(TAM);
-
-    //terminar depois. Tenho que pensar em uma forma de
-    //converter o valor em alguma altura para a DIV
 }
 
 function alterarCategorias(categorias) {
@@ -143,11 +159,9 @@ function alterarNome(name) {
     return pkmName;
 }
 
-function alterarDescricao(id) {
+function alterarDescricao(pkmDesc) {
 
-    console.log(id);
-    let URL = "http://pokeapi.co/api/v2/pokemon-species/" + id + "/flavor_text";
-
-    console.log(URL);
+    let pkmDescricao = document.querySelector(".pokemon-text");
+    pkmDescricao.textContent = pkmDesc;
 }
 

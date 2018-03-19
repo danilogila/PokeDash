@@ -10,6 +10,60 @@ body, html{
     width: 100%;
 }
 
+/* =====================  Reset da Progress bar tag ==================== */
+/* ===================================================================== */
+/* ===================================================================== */
+
+::-webkit-meter-bar {background: transparent;} /*background color of bar*/
+::-webkit-meter-optimum-value {background: #F7CF53;}
+::-webkit-meter-suboptimum-value{background:#F7CF53;}
+::-webkit-meter-even-less-good-value{background:#F7CF53;}
+
+::-moz-meter-bar {background: transparent!important;}
+::-moz-meter-optimum-value {background: #F7CF53;} 
+::-moz-meter-suboptimum-value{background:#F7CF53;}  
+
+progress {background:transparent !important;;}
+progress[value]::-webkit-progress-bar {background-color:#F7CF53;}
+progress::-moz-progress-bar { background:#F7CF53; }
+progress::-webkit-progress-value { background:#F7CF53; }
+progress { color:#F7CF53; }
+ 
+/* Background Colors  */ 
+                          /* Firefox  */ 
+progress[role][aria-valuenow] {    /* Polyfill */
+   background: transparent !important; /* !important is needed by the polyfill */
+}
+progress { 
+    -webkit-appearance: none;
+    appearance: none;
+ }
+/* Chrome */
+progress::-webkit-progress-bar {
+    background: transparent!important;
+}
+/* Foreground Colors   */ 
+/* IE10 */
+progress {
+    color:#F7CF53;
+}
+/* Firefox */
+progress::-moz-progress-bar { 
+    background: #F7CF53;   
+}
+/* Chrome */
+progress::-webkit-progress-value {
+    background:#F7CF53;
+}
+/* Polyfill */
+progress[aria-valuenow]:before  {
+    background: #F7CF53;
+}
+
+/* =====================  Reset da Progress bar tag ==================== */
+/* ===================================================================== */
+/* ===================================================================== */
+
 /* CSS responsável pelo menu lateral*/
 
 .trainer-sidenav{
@@ -29,6 +83,13 @@ body, html{
     font-size: 14px;
     color: white;
     display: block;
+}
+
+.trainer-sidenav a:hover{
+    padding-left: 40px;
+    -webkit-transition: 0.1s ease-in;
+    -moz-transition: 0.1s ease-in;
+    -o-transition: 0.1s ease-in
 }
 
 .logout-btn{
@@ -85,6 +146,7 @@ body, html{
 
 .pkmxp-wrapper{
     background-color: #E1E1E1;
+    width: 90%;
 }
 
 .exp-bar{
@@ -106,7 +168,7 @@ body, html{
     width: 100%;
     background-color: #F7CF53;
     -webkit-animation: xpgrow 1s infinite; /* Safari */
-    animation: xpgrow 2s;
+    animation: xppokemon 2s;
 }
 
 .xp-value{
@@ -171,14 +233,20 @@ body, html{
 }
 
 .btn-search{
-    float: right;
+    margin-left: 5px;
     padding: 8px 10px;
-    /* margin-top: 8px; */
-    /* margin-right: 16px; */
-    background: #ddd;
-    font-size: 17px;
+    font-size: 14px;
     border: none;
     cursor: pointer;
+    background-color: #F06868;
+    color: white;
+    border: 1px solid #F06868;
+}
+
+.btn-search,
+.btn-search:hover,
+.btn-search:active{
+    outline: none;
 }
 
 .form-search{
@@ -187,6 +255,7 @@ body, html{
     margin-left: auto;
     margin-right: auto;
     width: 80%;
+    display: inherit;
 }
 
 /* CSS responsável pela barra de busca dos Pokemons na API */
@@ -195,6 +264,8 @@ body, html{
 
 .pokemon-wrapper{
     width: 100%;
+    margin: 0 auto;
+    max-width: 1000px;  
     margin: 0 auto;
 }
 
@@ -220,7 +291,7 @@ body, html{
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .pkmxp-bar{
@@ -274,7 +345,7 @@ body, html{
     display: inline-block;
     color: #707070;
     height: fit-content;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 #pkmHabilidades{
@@ -401,6 +472,10 @@ body, html{
     width: 100%;
 }
 
+.battles-wrapper{
+    margin-top: 60px;
+}
+
 .stats-wrapper{
     justify-content: center;
     display: flex;
@@ -408,21 +483,28 @@ body, html{
     align-items: center;
     z-index: 1;
     align-self: baseline;
+    max-width: 60px;
 }
 
 .stats-bar{
     width: 28px;
-    background-color: #F7CF53;
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    width: 80px;
+    height: 29px;
+    border: none;
 }
 
 .stats-name{
     font-size: 12px;
     color: #707070;
+    margin-top: 32px;
 }
 
 .stats-caption{
     position: absolute;
-    font-size: 7.0em;
+    font-size: 6.7em;
     text-transform: capitalize;
     bottom: -101px;
     color: #ededed;
@@ -432,34 +514,34 @@ body, html{
 .health-bar{
     -webkit-animation: healthgrow 1s infinite; /* Safari */
     animation: healthgrow 2s;
-    height: 35px;
+   
 }
 .attack-bar{
     -webkit-animation: attackgrow 1s infinite; /* Safari */
     animation: attackgrow 2s;
-    height: 55px;
+    
 }
 .defense-bar{
     -webkit-animation: defensegrow 1s infinite; /* Safari */
     animation: defensegrow 2s;
-    height: 35px;
+    
 }
 .speed-bar{
     -webkit-animation: speedgrow 1s infinite; /* Safari */
     animation: speedgrow 2s;
-    height: 80px;
+    
 }
 
 .special-defense-bar{
     -webkit-animation: speedgrow 1s infinite; /* Safari */
     animation: speedgrow 2s;
-    height: 80px;
+    
 }
 
 .special-attack-bar{
     -webkit-animation: speedgrow 1s infinite; /* Safari */
     animation: speedgrow 2s;
-    height: 80px;
+   
 }
 /* CSS responsável pelas divs que contem os dados dos pokemons */
 
@@ -470,6 +552,7 @@ body, html{
     height: 155px;
     display: inline-block;
     margin: 10px;
+    position: relative;
 }
 
 .battle-info:nth-child(1){
@@ -483,6 +566,11 @@ body, html{
 @keyframes xpgrow{
     from{width: 0%;}
     to{width: 70%;}
+}
+
+@keyframes xppokemon{
+    from{width: 0%;}
+    to{width: 100%;}
 }
 /* Melhorias posteriores 
 
@@ -564,3 +652,10 @@ body, html{
 }
 
 /* CSS responsável pela janela modal de error quando não encontramos um Pokemon */
+
+#battleChart{
+    width: 100%;
+    height: 140px;
+    position: absolute;
+    bottom: 0px;
+}

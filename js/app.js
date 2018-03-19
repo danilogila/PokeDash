@@ -20,6 +20,7 @@ document.querySelector(".btn-search").addEventListener("click", function(e){
     
     console.log(pkmId);
 
-    buscarPokemon(pkmId);
+    fetchURLs(pkmId);
+
 });
 
