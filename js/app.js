@@ -1,4 +1,4 @@
-window.onload = function aumentoXp(){
+(function (){
 
 
 var inputXpUser = document.getElementsByClassName("current-xp")[0];
@@ -10,7 +10,7 @@ console.log(currentXp);
             inputXpUser.textContent = x;
         }, 2*x);
     }
-}
+})();
 
 
 document.querySelector(".btn-search").addEventListener("click", function(e){
